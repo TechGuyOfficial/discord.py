@@ -15,9 +15,9 @@ For example, in the given command definition:
 
 .. code-block:: python3
 
-    @bot.command()
+    @bot.command(pass_context=True)
     async def foo(ctx, arg):
-        await ctx.send(arg)
+        await client.send_message(ctx.message.channel, arg)
 
 With the following prefix (``$``), it would be invoked by the user via:
 
